@@ -1,2 +1,2 @@
 # snake_poi
-my snake game
+./winsys to open the game
