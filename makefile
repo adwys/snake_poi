@@ -12,16 +12,16 @@ winsys: $(OBJ)/main.o $(OBJ)/screen.o $(OBJ)/winsys.o $(OBJ)/snake.o
 	g++ -g -Wall -pedantic -std=c++11 $^ -o $@ -lncurses
 
 # With debugging symbols
-$(OBJ)/main.o: $(SRC)/main.cpp $(SRC)/winsys.h $(SRC)/screen.h $(SRC)/cpoint.h $(SRC)/snake.h
+$(OBJ)/main.o: main.cpp winsys.h screen.h cpoint.h snake.h
 	g++ -g -c -Wall -pedantic -std=c++11 $< -o $@
 
-$(OBJ)/screen.o: $(SRC)/screen.cpp $(SRC)/screen.h $(SRC)/cpoint.h
+$(OBJ)/screen.o: screen.cpp screen.h cpoint.h
 	g++ -g -c -Wall -pedantic -std=c++11 $< -o $@
 
-$(OBJ)/winsys.o: $(SRC)/winsys.cpp $(SRC)/winsys.h $(SRC)/screen.h $(SRC)/cpoint.h
+$(OBJ)/winsys.o: winsys.cpp winsys.h screen.h cpoint.h
 	g++ -g -c -Wall -pedantic -std=c++11 $< -o $@
 
-$(OBJ)/snake.o: $(SRC)/snake.cpp $(SRC)/winsys.h $(SRC)/screen.h $(SRC)/cpoint.h $(SRC)/snake.h
+$(OBJ)/snake.o: snake.cpp winsys.h screen.h cpoint.h snake.h
 	g++ -g -c -Wall -pedantic -std=c++11 $< -o $@
 
 .PHONY: clean
