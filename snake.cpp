@@ -168,6 +168,9 @@ void CSnake::restart_game(){
     s.push_back(CPoint(geom.topleft.y+4,10));
     s.push_back(CPoint(geom.topleft.y+3,10));
     s_paint();
+    make_fruit();
+    fruit_paint();
+    paint_help();
     level = 1;
     help = true;
     pause = true;
@@ -175,8 +178,7 @@ void CSnake::restart_game(){
     clock = 18000;
     game_over = false;
     game_start = false;
-    make_fruit();
-    paint_help();
+
 }
 
 bool CSnake::handleEvent(int c){
