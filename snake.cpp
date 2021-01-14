@@ -162,6 +162,21 @@ void CSnake::paint_level(){
 
 void CSnake::restart_game(){
 
+    s.clear();
+    CFramedWindow::paint();
+    s.push_back(CPoint(geom.topleft.y+5,10));
+    s.push_back(CPoint(geom.topleft.y+4,10));
+    s.push_back(CPoint(geom.topleft.y+3,10));
+    s_paint();
+    level = 1;
+    help = true;
+    pause = true;
+    curr_dir = RIGHT;
+    clock = 18000;
+    game_over = false;
+    game_start = false;
+    make_fruit();
+    paint_help();
 }
 
 bool CSnake::handleEvent(int c){
