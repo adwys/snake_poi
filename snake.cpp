@@ -35,7 +35,7 @@ void CSnake::paint() {
 
 void CSnake::s_paint(){
 
-    for(int i=0;i<s.size();i++){
+    for(int i=0;i<(int)s.size();i++){
         gotoyx(geom.topleft.y+s[i].y,geom.topleft.x+s[i].x);
         if(i == 0)printl("o");
         else printl("x");
@@ -45,7 +45,7 @@ void CSnake::s_paint(){
 
 bool CSnake::check_game_over(){
 
-    for(int i = 1;i<s.size();i++) {
+    for(int i = 1;i<(int)s.size();i++) {
         if (s[0].x == s[i].x && s[0].y == s[i].y){
             return true;
         }
@@ -139,7 +139,7 @@ void CSnake::make_fruit(){
          end=true;
          fruit.x = rand() % (geom.size.x-2) + 1;
          fruit.y = rand() % (geom.size.y-2) + 1;
-         for(int i=0;i<s.size();i++){
+         for(int i=0;i<(int)s.size();i++){
              if(fruit.x == s[i].x && fruit.y == s[i].y)end=false;
          }
     }
